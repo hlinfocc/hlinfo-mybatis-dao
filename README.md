@@ -14,6 +14,8 @@ hlinfo-MyBatis-Dao是能够在Spring Boot中快速使用mybatis的工具，是my
 </dependency>
 ```
 
+** 注意：此pom已经包含了MyBatis的内容，请勿在单独引入Mybatis的pom **
+
 ### 2.配置bean
 
 在您的项目的配置文件目录新建MybatisConfig.java，内容如下：
