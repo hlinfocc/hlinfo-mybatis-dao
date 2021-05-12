@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 import net.hlinfo.mybatis.opt.QueryResult;
 
 /**
- *
- * @author cy
+ * MybatisService为对{@link MybatisDao}操作数据库的扩展
+ * @author hlinfo.net
  *
  */
 
@@ -157,4 +157,6 @@ public interface MybatisService {
      * @return
      */
     public abstract boolean delete(String mybitsSqlId, Object object);
+    
+    public abstract String dc();
 }

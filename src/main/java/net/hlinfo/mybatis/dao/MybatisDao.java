@@ -3,6 +3,11 @@ package net.hlinfo.mybatis.dao;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * MybatisDao是Mybatis操作数据库的集成工具，集成{@link SqlSessionTemplate}，无需写mapper类，只需写xml即可快速操作数据库
+ * @author hlinfo.net
+ *
+ */
 public interface MybatisDao {
 	/**
      * 查询列表，有条件

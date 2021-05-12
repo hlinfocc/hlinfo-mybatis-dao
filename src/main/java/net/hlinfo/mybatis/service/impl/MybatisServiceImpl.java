@@ -5,9 +5,12 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import net.hlinfo.mybatis.dao.MybatisDao;
+import net.hlinfo.mybatis.opt.HlinfoDriverClassConfig;
 import net.hlinfo.mybatis.opt.Func;
 import net.hlinfo.mybatis.opt.QueryResult;
 import net.hlinfo.mybatis.opt.pager.MPager;
@@ -15,12 +18,28 @@ import net.hlinfo.mybatis.service.MybatisService;
 
 @Service
 public class MybatisServiceImpl implements MybatisService {
-	
     private MybatisDao mybatisDao;
-		
+    private HlinfoDriverClassConfig driverClassConfig;
+	public MybatisDao getMybatisDao() {
+		return mybatisDao;
+	}
+	public void setMybatisDao(MybatisDao mybatisDao) {
+		this.mybatisDao = mybatisDao;
+	}
+	public HlinfoDriverClassConfig getDriverClassConfig() {
+		return driverClassConfig;
+	}
+	public void setDriverClassConfig(HlinfoDriverClassConfig driverClassConfig) {
+		this.driverClassConfig = driverClassConfig;
+	}
 	public MybatisServiceImpl(MybatisDao mybatisDao) {
 		super();
 		this.mybatisDao = mybatisDao;
+	}
+	public MybatisServiceImpl(MybatisDao mybatisDao,HlinfoDriverClassConfig driverClassConfig) {
+		super();
+		this.mybatisDao = mybatisDao;
+		this.driverClassConfig = driverClassConfig;
 	}
 
 	@Override
@@ -143,6 +162,12 @@ public class MybatisServiceImpl implements MybatisService {
 	public boolean delete(String mybitsSqlId, Object object) {
 		// TODO Auto-generated method stub
 		return this.mybatisDao.delete(mybitsSqlId, object);
+	}
+
+	@Override
+	public String dc() {
+		// TODO Auto-generated method stub
+		return this.driverClassConfig.getDriverClassName()==null?"":this.driverClassConfig.getDriverClassName();
 	}
 
 }

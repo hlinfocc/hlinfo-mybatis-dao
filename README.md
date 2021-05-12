@@ -1,6 +1,11 @@
 # hlinfo-MyBatis-Dao是什么？
 
-hlinfo-MyBatis-Dao是能够在Spring Boot中快速使用mybatis的工具，是mybatis的SqlSessionTemplate深度集成整合操作实现，无需写Mapper类，只需要写xml文件即可，不对MyBatis做任何改变 
+hlinfo-MyBatis-Dao是能够在Spring Boot中快速集成使用mybatis的工具，是mybatis的SqlSessionTemplate深度集成整合的操作实现，无需写Mapper类，只需要写xml文件即可，不对MyBatis做任何改变。
+
+# 特点
+
+引入maven依赖即可使用Mybatis，无需配置@Bean，内部已经自动注入了相关的@Bean
+
 
 # 快速使用
 
@@ -10,57 +15,15 @@ hlinfo-MyBatis-Dao是能够在Spring Boot中快速使用mybatis的工具，是my
 <dependency>
     <groupId>net.hlinfo</groupId>
     <artifactId>hlinfo-mybatis-dao</artifactId>
-    <version>Latest Version</version>
+    <version>LATEST</version>
 </dependency>
 ```
 
-**注意：此maven依赖已经包含了MyBatis的内容，请勿在单独引入Mybatis的依赖**
+**注意：此maven依赖已经包含了MyBatis（mybatis-spring-boot-starter最新版）的内容，请勿再单独引入Mybatis的依赖**
 
-### 2.配置bean
 
-在您的项目的配置文件目录新建MybatisConfig.java，内容如下：
 
-``` java
-package net.hlinfo.example.etc;
-
-import org.mybatis.spring.SqlSessionTemplate;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-
-import net.hlinfo.mybatis.dao.MybatisDao;
-import net.hlinfo.mybatis.dao.impl.MybatisDaoImpl;
-import net.hlinfo.mybatis.service.MybatisService;
-import net.hlinfo.mybatis.service.impl.MybatisServiceImpl;
-
-@Configuration
-public class MybatisConfig{
-	
-	/**
-	 * 配置MybatisDao，注入SqlSessionTemplate
-	 * @param sqlSessionTemplate
-	 * @return
-	 */
-    @Bean
-    public MybatisDao mybatisDao(SqlSessionTemplate sqlSessionTemplate){
-    	MybatisDao mybatisDao = new MybatisDaoImpl(sqlSessionTemplate);
-    	return mybatisDao;
-    }
-    
-    /**
-     * 配置MybatisService，对MybatisDao的一些操作的扩展
-     * @param mybatisDao
-     * @return
-     */
-    @Bean
-    public MybatisService mybatisService(MybatisDao mybatisDao){
-    	MybatisService mybatisService = new MybatisServiceImpl(mybatisDao);
-    	return mybatisService;
-    }
-}
-
-```
-
-### 3.在application.yml或application.properties配置MyBatis的mapper的相关路径
+### 2.在application.yml或application.properties配置MyBatis的mapper的相关路径
 application.yml配置示例：
 
 ``` yml
@@ -74,11 +37,11 @@ mybatis:
 
 **config-location：** MyBatis xml配置文件的位置
 
-**mapper-locations：** MyBatis mapper文件的位置（注意：在classpath后面的 \* 必不可少，本程序路径为mybatis/mapper[也就是resources下的mybatis目录下的mapper]，如果您程序需要改为其他路径,如mappers[也就是resources下的mappers目录],需要保留本程序的mapper文件路径[classpath*:mybatis/mapper/ \*.xml]，则mybatis.mapper-locations=classpath:mappers/\*.xml,classpath\*:mybatis/mapper/\*.xml）
+**mapper-locations：** MyBatis mapper文件的位置（注意：在classpath后面的 \* 必不可少，本程序路径为mybatis/mapper[也就是resources下的mybatis目录下的mapper]，如果您程序需要改为其他路径,如mappers[也就是resources下的mappers目录]，需要保留本程序的mapper文件路径[classpath*:mybatis/mapper/ \*.xml]，则mybatis.mapper-locations=classpath:mappers/\*.xml,classpath\*:mybatis/mapper/\*.xml）
 
 **type-aliases-package：** 要搜索类型别名的包（也就是实体类的包名）
 
-### 4.在Controller使用
+### 3.在Controller使用
 
 ```
 
