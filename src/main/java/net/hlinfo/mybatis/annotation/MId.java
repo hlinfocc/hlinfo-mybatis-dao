@@ -28,9 +28,7 @@ import java.lang.annotation.Target;
  *
  * 这样，插入的时候，Nutz.Dao 就不会忽略这个字段了。
  *
- * @author zozoh(zozohtnt@gmail.com)
- *
- * @see org.nutz.dao.entity.annotation.Next
+ * Powered Nutz annotation
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.FIELD, ElementType.METHOD})

@@ -14,7 +14,7 @@ import java.lang.annotation.Target;
  * 可以支持书写类似 '@Default("${name}@gmail.com")' 这样的语法， 其中类似 ${XXXXX}
  * 的占位符，会被本对象相应字段的值在运行时替换
  *
- * @author zozoh(zozohtnt@gmail.com)
+ * Powered Nutz annotation
  *
  */
 @Retention(RetentionPolicy.RUNTIME)

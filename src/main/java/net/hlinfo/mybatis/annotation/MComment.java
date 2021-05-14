@@ -11,7 +11,7 @@ import java.lang.annotation.Target;
  *
  * <b>动态表名暂时不支持</b>
  *
- * @author pangwu86(pangwu86@gmail.com)
+ * Powered Nutz annotation
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.TYPE, ElementType.FIELD})

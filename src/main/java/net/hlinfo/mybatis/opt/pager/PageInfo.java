@@ -3,42 +3,48 @@ package net.hlinfo.mybatis.opt.pager;
 
 public interface PageInfo {
 	 /**
-     * 一共有多少页
+    * @return  一共有多少页
      */
     int getPageCount();
 
     /**
-     * 当前是第几页， 从 1 开始
+    * @return 当前是第几页， 从 1 开始
      */
     int getPageNumber();
 
     /**
      * 设置页码
+     * @param pageNumber 页数
+     * @return 当前分页信息
      */
     PageInfo setPageNumber(int pageNumber);
 
     /**
-     * 一页可以有多少条记录
+    * @return 一页可以有多少条记录
      */
     int getPageSize();
 
     /**
      * 设置一页可以有多少条记录
+     * @param pageSize 一页可以有多少条记录
+     * @return 当前分页信息
      */
     PageInfo setPageSize(int pageSize);
 
     /**
-     * 整个查询，一共有多少条记录
+    * @return 整个查询，一共有多少条记录
      */
     int getRecordCount();
 
     /**
      * 设置整个查询一共有多少条记录
+     * @param recordCount 总记录数
+     * @return 当前分页信息
      */
     PageInfo setRecordCount(int recordCount);
 
     /**
-     * 当前页之前，还应该有多少条记录
+     * @return 当前页之前，还应该有多少条记录
      */
     int getOffset();
 

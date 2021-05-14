@@ -12,6 +12,10 @@ public class HlinfoDriverClassConfig {
 		return driverClassName;
 	}
 
+	/**
+	 * 
+	 * @param driverClassName 数据库驱动名
+	 */
 	public void setDriverClassName(String driverClassName) {
 		this.driverClassName = driverClassName;
 	}

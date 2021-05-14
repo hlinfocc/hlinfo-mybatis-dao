@@ -164,10 +164,4 @@ public class MybatisServiceImpl implements MybatisService {
 		return this.mybatisDao.delete(mybitsSqlId, object);
 	}
 
-	@Override
-	public String dc() {
-		// TODO Auto-generated method stub
-		return this.driverClassConfig.getDriverClassName()==null?"":this.driverClassConfig.getDriverClassName();
-	}
-
 }

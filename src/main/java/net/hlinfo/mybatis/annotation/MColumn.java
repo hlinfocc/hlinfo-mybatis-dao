@@ -18,32 +18,45 @@ import java.lang.annotation.Target;
  * <b style=color:red>需要说明的是：</b>
  * <ul>
  * <li>如果你的 POJO <u><b>没有任何一个字段</b></u> 声明了这个注解，那么所有的 Java 字段都会被认为是数据库字段。
- * <li>声明了 '@Id' 和 '@Name' 的字段没必要声明这个注解。
  * </ul>
  *
- * @author zozoh(zozohtnt@gmail.com)
+ * Powered Nutz annotation
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.FIELD, ElementType.METHOD})
 @Documented
 public @interface MColumn {
-
+	/**
+	 * 字段名
+	 * @return 字段名
+	 */
     String value() default "";
 
     /**
-     * 是否把字段的命名方式从驼峰式大小写(camelCase)变成蛇底式小写(snake_case)
+     * 是否把字段的命名方式从驼峰式大小写(camelCase)变成下划线式小写(snake_case)
      *
-     * @return true: 蛇底式小写，false: 驼峰式大小写
+     * @return true: 下划线式小写，false: 驼峰式大小写
      */
     boolean hump() default false;
 
+    /**
+     * 
+     * @return wrap
+     */
     boolean wrap() default false;
-
+    /**
+     * 
+     * @return 版本
+     */
     boolean version() default false;
 
-    /** 字段前缀 */
+    /**
+     * @return 字段前缀 
+     */
     String prefix() default "";
 
-    /** 字段后缀 */
+    /**
+     * @return 字段后缀 
+     */
     String suffix() default "";
 }

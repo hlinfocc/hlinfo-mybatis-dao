@@ -11,7 +11,7 @@ import java.lang.annotation.Target;
  *
  * @see MTableIndexes
  *
- * @author zozoh(zozohtnt@gmail.com)
+ * Powered Nutz annotation
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.FIELD})

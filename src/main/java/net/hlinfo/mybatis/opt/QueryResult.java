@@ -32,7 +32,10 @@ public class QueryResult<T> implements Serializable {
         this.list = list;
         this.pager = pager;
     }
-
+    /**
+     * 
+     * @param list 查询结果
+     */
     public QueryResult(List<T> list) {
 		super();
 		this.list = list;

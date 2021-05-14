@@ -13,7 +13,7 @@ import java.lang.annotation.Target;
  * <p>
  * 属性 casesensitive 将指明，这个主键是否为大小写敏感
  *
- * @author zozoh(zozohtnt@gmail.com)
+ * Powered Nutz annotation
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.FIELD, ElementType.METHOD})

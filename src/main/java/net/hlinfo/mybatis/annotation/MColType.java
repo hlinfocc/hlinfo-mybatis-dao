@@ -3,7 +3,7 @@ package net.hlinfo.mybatis.annotation;
 /**
  * 描述一个数据库字段类型
  *
- * @author zozoh(zozohtnt@gmail.com)
+ * Powered Nutz annotation
  */
 public enum MColType {
 

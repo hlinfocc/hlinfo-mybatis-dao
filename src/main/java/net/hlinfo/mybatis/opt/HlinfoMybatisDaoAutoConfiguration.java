@@ -27,7 +27,7 @@ public class HlinfoMybatisDaoAutoConfiguration {
 	/**
 	 * 配置MybatisDao，注入SqlSessionTemplate
 	 * @param sqlSessionTemplate
-	 * @return
+	 * @return mybatisDao实例化对象
 	 */
     @Bean
     public MybatisDao mybatisDao(SqlSessionTemplate sqlSessionTemplate){
@@ -37,8 +37,8 @@ public class HlinfoMybatisDaoAutoConfiguration {
     
     /**
      * 配置MybatisService，对MybatisDao的一些操作的扩展
-     * @param mybatisDao
-     * @return
+     * @param mybatisDao mybatisDao实例化对象
+     * @return mybatisService实例化对象
      */
     @Bean
     public MybatisService mybatisService(MybatisDao mybatisDao){
