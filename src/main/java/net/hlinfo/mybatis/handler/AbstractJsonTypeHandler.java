@@ -18,7 +18,7 @@ package net.hlinfo.mybatis.handler;
 import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;
 
-import net.hlinfo.mybatis.opt.Func;
+import net.hlinfo.opt.Func;
 
 import java.sql.CallableStatement;
 import java.sql.PreparedStatement;

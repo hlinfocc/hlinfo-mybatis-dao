@@ -3,17 +3,14 @@ package net.hlinfo.mybatis.service.impl;
 import java.util.List;
 import java.util.Map;
 
-import javax.annotation.Resource;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import net.hlinfo.mybatis.dao.MybatisDao;
 import net.hlinfo.mybatis.opt.HlinfoDriverClassConfig;
-import net.hlinfo.mybatis.opt.Func;
-import net.hlinfo.mybatis.opt.QueryResult;
-import net.hlinfo.mybatis.opt.pager.MPager;
+import net.hlinfo.opt.Func;
+import net.hlinfo.opt.QueryResult;
+import net.hlinfo.opt.pager.MPager;
 import net.hlinfo.mybatis.service.MybatisService;
 
 @Service

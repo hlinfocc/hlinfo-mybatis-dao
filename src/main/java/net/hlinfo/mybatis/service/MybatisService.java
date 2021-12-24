@@ -5,7 +5,7 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
-import net.hlinfo.mybatis.opt.QueryResult;
+import net.hlinfo.opt.QueryResult;
 
 /**
  * MybatisService为对{@link net.hlinfo.mybatis.dao.MybatisDao}操作数据库的扩展

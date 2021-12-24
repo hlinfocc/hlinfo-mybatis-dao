@@ -3,7 +3,7 @@
   
   <groupId>net.hlinfo</groupId>
   <artifactId>hlinfo-mybatis-dao</artifactId>
-  <version>1.0.2</version>
+  <version>1.0.3</version>
   
   <name>hlinfo-mybatis-dao</name>
   <url>https://github.com/hlinfocc/hlinfo-mybatis-dao</url>
@@ -42,48 +42,66 @@
 	  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	  <maven.compiler.source>1.8</maven.compiler.source>
 	  <maven.compiler.target>1.8</maven.compiler.target>
+	  <jackson.version>2.13.1</jackson.version>
+	  <fastjson.version>1.2.75</fastjson.version>
+	  <configuration.processor.version>2.6.1</configuration.processor.version>
+	  <gson.version>2.8.9</gson.version>
+	  <hlinfo.utils.version>1.0.2</hlinfo.utils.version>
+	  <mybatis.starter.version>2.2.0</mybatis.starter.version>
   </properties>
   
   <dependencies>
     <dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
 			<artifactId>mybatis-spring-boot-starter</artifactId>
-			<version>2.1.4</version>
+			<version>${mybatis.starter.version}</version>
 	</dependency>
 	<dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-configuration-processor</artifactId>
-        <version>LATEST</version>
+        <version>${configuration.processor.version}</version>
+        <scope>compile</scope>
+        <optional>true</optional>
     </dependency>
     <dependency>
 	  <groupId>com.fasterxml.jackson.core</groupId>
 	  <artifactId>jackson-annotations</artifactId>
-	  <version>2.12.3</version>
+	  <version>${jackson.version}</version>
+	  <scope>compile</scope>
+      <optional>true</optional>
 	</dependency>
 	<dependency>
         <groupId>com.alibaba</groupId>
         <artifactId>fastjson</artifactId>
-        <version>1.2.75</version>
+        <version>${fastjson.version}</version>
+        <scope>compile</scope>
+      	 <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
-      <version>2.11.3</version>
+      <version>${jackson.version}</version>
       <scope>compile</scope>
       <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>com.google.code.gson</groupId>
       <artifactId>gson</artifactId>
-      <version>2.8.6</version>
+      <version>${gson.version}</version>
       <scope>compile</scope>
       <optional>true</optional>
     </dependency>
-    <!-- <dependency>
-	  <groupId>org.slf4j</groupId>
-	  <artifactId>slf4j-api</artifactId>
-	  <version>1.7.30</version>
-	</dependency> -->
+    <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>javax.servlet-api</artifactId>
+        <version>4.0.1</version>
+        <scope>provided</scope>
+    </dependency>
+    <dependency>
+		<groupId>net.hlinfo</groupId>
+		<artifactId>hlinfo-utils</artifactId>
+		<version>${hlinfo.utils.version}</version>
+	</dependency>
   </dependencies>
   <build>
     <plugins>
@@ -151,6 +169,7 @@
           </executions>
       </plugin>
       <!--staging puglin,用于自动执行发布阶段(免手动)-->
+      <!-- nexusUrl是你申请groupId 会在邮件里面提供 -->
       <plugin>
           <groupId>org.sonatype.plugins</groupId>
           <artifactId>nexus-staging-maven-plugin</artifactId>

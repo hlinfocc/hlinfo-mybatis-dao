@@ -11,11 +11,13 @@ hlinfo-MyBatis-Dao是能够在Spring Boot中快速集成使用mybatis的工具�
 
 ### 1.引入pom:
 
+>请前往Maven中央库查找最新版本
+
 ``` xml
 <dependency>
     <groupId>net.hlinfo</groupId>
     <artifactId>hlinfo-mybatis-dao</artifactId>
-    <version>LATEST</version>
+    <version>1.0.3</version>
 </dependency>
 ```
 
@@ -105,6 +107,10 @@ Mapper文件如下：
 </mapper>
 
 ```
+
+### 4.备注
+
+
 
 # 参考资料
 * mybatis-plus
