@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import net.hlinfo.mybatis.dao.MybatisDao;
 import net.hlinfo.mybatis.opt.HlinfoDriverClassConfig;
 import net.hlinfo.opt.Func;
+import net.hlinfo.opt.QueryPages;
 import net.hlinfo.opt.QueryResult;
 import net.hlinfo.opt.pager.MPager;
 import net.hlinfo.mybatis.service.MybatisService;
@@ -104,7 +105,7 @@ public class MybatisServiceImpl implements MybatisService {
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
-	public <T> QueryResult pageList(String mybitsSqlId,String mybitsCountSqlId, Class<T> classOfT, Map<String,Object> map, int page, int limit) {
+	public <T> QueryPages pageList(String mybitsSqlId,String mybitsCountSqlId, Class<T> classOfT, Map<String,Object> map, int page, int limit) {
 		// TODO Auto-generated method stub
 		page = (page==0)?1:page;
 		limit = (limit==0)?20:limit;
@@ -115,12 +116,12 @@ public class MybatisServiceImpl implements MybatisService {
 		int count = this.mybatisDao.count(mybitsCountSqlId, map);
 		MPager pager = new MPager(page, limit);
 		pager.setRecordCount(count);
-		return new QueryResult(list, pager);
+		return new QueryPages(list, pager);
 	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
-	public <T> QueryResult pageList(String mybitsSqlId, String mybitsCountSqlId, Class<T> classOfT, String fields,
+	public <T> QueryPages pageList(String mybitsSqlId, String mybitsCountSqlId, Class<T> classOfT, String fields,
 			Map<String, Object> map, int page, int limit) {
 		page = (page==0)?1:page;
 		limit = (limit==0)?20:limit;
@@ -132,7 +133,7 @@ public class MybatisServiceImpl implements MybatisService {
 		int count = this.mybatisDao.count(mybitsCountSqlId, map);
 		MPager pager = new MPager(page, limit);
 		pager.setRecordCount(count);
-		return new QueryResult(list, pager);
+		return new QueryPages(list, pager);
 	}
 
 	@Override

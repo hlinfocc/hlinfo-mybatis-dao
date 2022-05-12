@@ -5,7 +5,7 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
-import net.hlinfo.opt.QueryResult;
+import net.hlinfo.opt.QueryPages;
 
 /**
  * MybatisService为对{@link net.hlinfo.mybatis.dao.MybatisDao}操作数据库的扩展
@@ -63,7 +63,7 @@ public interface MybatisService {
 	 * @param limit 每页可以有多少条记录
 	 * @return 一个分页查询的结果集合，包括本页数据列表以及分页信息
 	 */
-	<T> QueryResult pageList(String mybitsSqlId,String mybitsCountSqlId,Class<T> classOfT, Map<String,Object> map,int page,int limit);
+	<T> QueryPages<T> pageList(String mybitsSqlId,String mybitsCountSqlId,Class<T> classOfT, Map<String,Object> map,int page,int limit);
 	/**
 	 * 分页查询列表，有参数，参数为对象
 	 * @param <T> 对象
@@ -76,7 +76,7 @@ public interface MybatisService {
 	 * @param limit 每页可以有多少条记录
 	 * @return 一个分页查询的结果集合，包括本页数据列表以及分页信息
 	 */
-	<T> QueryResult pageList(String mybitsSqlId,String mybitsCountSqlId,Class<T> classOfT,String fields, Map<String,Object> map,int page,int limit);
+	<T> QueryPages pageList(String mybitsSqlId,String mybitsCountSqlId,Class<T> classOfT,String fields, Map<String,Object> map,int page,int limit);
     /**
      * 查询数量，无条件
      * @param mybitsSqlId Mybatis的Xml的SQLId
