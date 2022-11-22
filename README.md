@@ -13,11 +13,23 @@ hlinfo-MyBatis-Dao是能够在Spring Boot中快速集成使用mybatis的工具�
 
 >请前往Maven中央库查找最新版本
 
+**非SpringBoot工程直接引入：**
+
 ``` xml
 <dependency>
     <groupId>net.hlinfo</groupId>
     <artifactId>hlinfo-mybatis-dao</artifactId>
-    <version>1.0.3</version>
+    <version>1.1.0</version>
+</dependency>
+```
+
+**Spring Boot 工程则引入hlinfo-utils-spring-boot-starter即可(自动注入相关Bean)：**
+
+```xml
+<dependency>
+  <groupId>net.hlinfo</groupId>
+  <artifactId>hlinfo-utils-spring-boot-starter</artifactId>
+  <version>1.0.1</version>
 </dependency>
 ```
 

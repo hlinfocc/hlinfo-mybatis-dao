@@ -12,10 +12,11 @@ import net.hlinfo.mybatis.dao.impl.MybatisDaoImpl;
 import net.hlinfo.mybatis.service.MybatisService;
 import net.hlinfo.mybatis.service.impl.MybatisServiceImpl;
 
-@org.springframework.context.annotation.Configuration
+//@org.springframework.context.annotation.Configuration
 //@EnableAutoConfiguration
-@EnableConfigurationProperties(HlinfoDriverClassConfig.class)
-@AutoConfigureAfter({MybatisAutoConfiguration.class})
+//@EnableConfigurationProperties(HlinfoDriverClassConfig.class)
+//@AutoConfigureAfter({MybatisAutoConfiguration.class})
+@Deprecated
 public class HlinfoMybatisDaoAutoConfiguration {
 	 private HlinfoDriverClassConfig driverClassConfig;
 
@@ -26,10 +27,12 @@ public class HlinfoMybatisDaoAutoConfiguration {
 
 	/**
 	 * 配置MybatisDao，注入SqlSessionTemplate
+	 * (此@Bean已迁移至hlinfo-utils-spring-boot-starter工程)
 	 * @param sqlSessionTemplate
 	 * @return mybatisDao实例化对象
 	 */
-    @Bean
+//    @Bean
+	@Deprecated
     public MybatisDao mybatisDao(SqlSessionTemplate sqlSessionTemplate){
     	MybatisDao mybatisDao = new MybatisDaoImpl(sqlSessionTemplate);
     	return mybatisDao;
@@ -37,10 +40,12 @@ public class HlinfoMybatisDaoAutoConfiguration {
     
     /**
      * 配置MybatisService，对MybatisDao的一些操作的扩展
+     * (此@Bean已迁移至hlinfo-utils-spring-boot-starter工程)
      * @param mybatisDao mybatisDao实例化对象
      * @return mybatisService实例化对象
      */
-    @Bean
+//    @Bean
+	@Deprecated
     public MybatisService mybatisService(MybatisDao mybatisDao){
     	MybatisService mybatisService = new MybatisServiceImpl(mybatisDao,driverClassConfig);
     	return mybatisService;
