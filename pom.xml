@@ -3,7 +3,7 @@
   
   <groupId>net.hlinfo</groupId>
   <artifactId>hlinfo-mybatis-dao</artifactId>
-  <version>1.1.1</version>
+  <version>1.1.2</version>
   
   <name>hlinfo-mybatis-dao</name>
   <url>https://github.com/hlinfocc/hlinfo-mybatis-dao</url>

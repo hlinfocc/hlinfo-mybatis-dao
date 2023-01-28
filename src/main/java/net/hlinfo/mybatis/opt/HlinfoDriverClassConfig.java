@@ -26,4 +26,10 @@ public class HlinfoDriverClassConfig {
 		}
 		return false;
 	}
+	public boolean isPgSQL() {
+		if(driverClassName.indexOf("postgresql")>=0) {
+			return true;
+		}
+		return false;
+	}
 }
