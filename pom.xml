@@ -3,7 +3,7 @@
   
   <groupId>net.hlinfo</groupId>
   <artifactId>hlinfo-mybatis-dao</artifactId>
-  <version>1.1.5</version>
+  <version>1.1.6</version>
   
   <name>hlinfo-mybatis-dao</name>
   <url>https://github.com/hlinfocc/hlinfo-mybatis-dao</url>
@@ -46,7 +46,7 @@
 	  <fastjson.version>1.2.83_noneautotype</fastjson.version>
 	  <configuration.processor.version>2.6.1</configuration.processor.version>
 	  <gson.version>2.10.1</gson.version>
-	  <hlinfo.utils.version>1.0.14</hlinfo.utils.version>
+	  <hlinfo.utils.version>1.0.15</hlinfo.utils.version>
 	  <mybatis-spring-boot-starter.version>2.3.0</mybatis-spring-boot-starter.version>
   </properties>
   
