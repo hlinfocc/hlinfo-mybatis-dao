@@ -3,7 +3,7 @@
   
   <groupId>net.hlinfo</groupId>
   <artifactId>hlinfo-mybatis-dao</artifactId>
-  <version>1.1.6</version>
+  <version>1.1.7</version>
   
   <name>hlinfo-mybatis-dao</name>
   <url>https://github.com/hlinfocc/hlinfo-mybatis-dao</url>
@@ -42,12 +42,12 @@
 	  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	  <maven.compiler.source>1.8</maven.compiler.source>
 	  <maven.compiler.target>1.8</maven.compiler.target>
-	  <jackson.version>2.14.1</jackson.version>
+	  <jackson.version>2.19.0</jackson.version>
 	  <fastjson.version>1.2.83_noneautotype</fastjson.version>
-	  <configuration.processor.version>2.6.1</configuration.processor.version>
-	  <gson.version>2.10.1</gson.version>
-	  <hlinfo.utils.version>1.0.15</hlinfo.utils.version>
-	  <mybatis-spring-boot-starter.version>2.3.0</mybatis-spring-boot-starter.version>
+	  <configuration.processor.version>2.7.18</configuration.processor.version>
+	  <gson.version>2.13.1</gson.version>
+	  <hlinfo.utils.version>1.0.17</hlinfo.utils.version>
+	  <mybatis-spring-boot-starter.version>2.3.2</mybatis-spring-boot-starter.version>
   </properties>
   
   <dependencies>
@@ -169,18 +169,16 @@
           </executions>
       </plugin>
       <!--staging puglin,用于自动执行发布阶段(免手动)-->
-      <!-- nexusUrl是你申请groupId 会在邮件里面提供 -->
       <plugin>
-          <groupId>org.sonatype.plugins</groupId>
-          <artifactId>nexus-staging-maven-plugin</artifactId>
-          <version>1.6.8</version>
+          <groupId>org.sonatype.central</groupId>
+          <artifactId>central-publishing-maven-plugin</artifactId>
+          <version>0.7.0</version>
           <extensions>true</extensions>
           <configuration>
-              <serverId>ossrh</serverId>
-              <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
-              <autoReleaseAfterClose>true</autoReleaseAfterClose>
+             <publishingServerId>central</publishingServerId>
+             <autoPublish>true</autoPublish>
           </configuration>
-      </plugin>
+        </plugin>
       <!-- release plugin,用于发布到release仓库部署插件 -->
       <plugin>
           <groupId>org.apache.maven.plugins</groupId>
